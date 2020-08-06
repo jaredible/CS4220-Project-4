@@ -15,7 +15,6 @@ final class ListViewController: UIViewController {
         super.viewDidLoad()
         configureModel()
         configureSearchController()
-        activityIndicator.hidesWhenStopped = true
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -60,7 +59,6 @@ extension ListViewController: ListModelDelegate {
         DispatchQueue.main.async { [weak self] in
             guard let strongSelf = self else { return }
             
-            strongSelf.view.isUserInteractionEnabled = false
             strongSelf.activityIndicator.startAnimating()
         }
     }
@@ -69,11 +67,10 @@ extension ListViewController: ListModelDelegate {
         DispatchQueue.main.async { [weak self] in
             guard let strongSelf = self else { return }
             
-            strongSelf.view.isUserInteractionEnabled = true
             strongSelf.activityIndicator.stopAnimating()
             
             if error != nil {
-                strongSelf.presentSingleActionAlert(alerTitle: "", message: "Unable to fetch data", actionTitle: "OK", completion: {})
+                strongSelf.presentSingleActionAlert(alerTitle: "Error", message: error?.message ?? "", actionTitle: "OK", completion: {})
             } else if reloadData {
                 strongSelf.tableView.reloadData()
             }

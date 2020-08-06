@@ -31,15 +31,14 @@ final class ListModel {
     func loadPokédex() {
         guard let pokédex = pokédexPersistence.pokédex else {
             delegate?.willDownload()
-            serviceClient.getPokédex(completion: { [weak self] result in
-                guard let strongSelf = self else { return }
+            serviceClient.getPokédex(completion: { result in
                 switch result {
                 case .success(let pokédex):
-                    strongSelf.pokémon = pokédex.entries
-                    strongSelf.pokédexPersistence.save(pokédex)
-                    strongSelf.delegate?.didDownload(error: nil, reloadData: true)
+                    self.pokémon = pokédex.entries
+                    self.pokédexPersistence.save(pokédex)
+                    self.delegate?.didDownload(error: nil, reloadData: true)
                 case .failure(let error):
-                    strongSelf.delegate?.didDownload(error: error, reloadData: false)
+                    self.delegate?.didDownload(error: error, reloadData: false)
                 }
             })
             return
@@ -52,15 +51,14 @@ final class ListModel {
         let entry = pokémon(for: indexPath, isFiltering: isFiltering)
         guard let pokémon = pokémonPersistence.pokémon(named: entry.name) else {
             delegate?.willDownload()
-            serviceClient.getPokémon(fromUrl: entry.url, completion: { [weak self] result in
-                guard let strongSelf = self else { return }
+            serviceClient.getPokémon(fromUrl: entry.url, completion: { result in
                 switch result {
                 case .success(let pokémon):
-                    strongSelf.pokémonPersistence.save(pokémon)
-                    strongSelf.delegate?.didDownload(error: nil, reloadData: true)
-                    strongSelf.delegate?.show(pokémon)
+                    self.pokémonPersistence.save(pokémon)
+                    self.delegate?.didDownload(error: nil, reloadData: true)
+                    self.delegate?.show(pokémon)
                 case .failure(let error):
-                    strongSelf.delegate?.didDownload(error: error, reloadData: false)
+                    self.delegate?.didDownload(error: error, reloadData: false)
                 }
             })
             return
@@ -93,7 +91,6 @@ final class ListModel {
     
     func filterContentForSearchText(_ searchText: String) {
         let searchTerms = searchText
-            .lowercased()
             .trimmingCharacters(in: .whitespacesAndNewlines)
             .components(separatedBy: .whitespaces)
             .filter { $0 != "" }

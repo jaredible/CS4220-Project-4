@@ -25,6 +25,9 @@ final class PokéAPIServiceClient {
             case .success(let data):
                 if let pokédex = try? JSONDecoder().decode(Pokédex.self, from: data) {
                     completion(.success(pokédex))
+                } else {
+                    let serviceCallError = ServiceCallError(message: "Could not get Pokédex", code: 404)
+                    completion(.failure(serviceCallError))
                 }
             case .failure(let error):
                 completion(.failure(error))
@@ -40,6 +43,9 @@ final class PokéAPIServiceClient {
                     self.getSprite(for: servicePokémon, completion: { result in
                         completion(result)
                     })
+                } else {
+                    let serviceCallError = ServiceCallError(message: "Could not get Pokédex", code: 404)
+                    completion(.failure(serviceCallError))
                 }
             case .failure(let error):
                 completion(.failure(error))

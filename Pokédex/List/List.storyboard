@@ -21,7 +21,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S2Z-ol-Eid" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1074" y="173"/>
+            <point key="canvasLocation" x="-1080" y="173"/>
         </scene>
         <!--Detail-->
         <scene sceneID="Ca2-r4-mca">
@@ -31,7 +31,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ab-eA-3mY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="428" y="173"/>
+            <point key="canvasLocation" x="262" y="173"/>
         </scene>
         <!--Pokémon-->
         <scene sceneID="aTD-3k-joK">
@@ -83,19 +83,17 @@
                                     <outlet property="delegate" destination="2tG-Tc-Jrv" id="J2S-JF-j89"/>
                                 </connections>
                             </tableView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="MTL-IP-iPY" userLabel="Activity Indicator">
-                                <rect key="frame" x="157" y="425" width="100" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="9lX-VO-6gN"/>
-                                    <constraint firstAttribute="height" constant="100" id="Tyf-EW-vDj"/>
-                                </constraints>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="MTL-IP-iPY" userLabel="Activity Indicator">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="MTL-IP-iPY" firstAttribute="centerX" secondItem="BwI-av-DIu" secondAttribute="centerX" id="Hc6-YA-KCe"/>
+                            <constraint firstAttribute="bottom" secondItem="MTL-IP-iPY" secondAttribute="bottom" id="XyF-CP-vQv"/>
+                            <constraint firstItem="MTL-IP-iPY" firstAttribute="leading" secondItem="BwI-av-DIu" secondAttribute="leading" id="f5A-ow-THZ"/>
                             <constraint firstItem="IqV-aK-qdi" firstAttribute="bottom" secondItem="sQv-Bj-UgI" secondAttribute="bottom" id="ijj-NP-hUe"/>
-                            <constraint firstItem="MTL-IP-iPY" firstAttribute="centerY" secondItem="BwI-av-DIu" secondAttribute="centerY" constant="27" id="rTU-Xz-7pm"/>
+                            <constraint firstItem="MTL-IP-iPY" firstAttribute="top" secondItem="BwI-av-DIu" secondAttribute="top" id="m92-eo-sLI"/>
+                            <constraint firstAttribute="trailing" secondItem="MTL-IP-iPY" secondAttribute="trailing" id="pLS-hD-YBa"/>
                             <constraint firstItem="sQv-Bj-UgI" firstAttribute="top" secondItem="IqV-aK-qdi" secondAttribute="top" id="sdk-rV-Iz3"/>
                             <constraint firstItem="IqV-aK-qdi" firstAttribute="trailing" secondItem="sQv-Bj-UgI" secondAttribute="trailing" id="t42-aB-nc3"/>
                             <constraint firstItem="sQv-Bj-UgI" firstAttribute="leading" secondItem="IqV-aK-qdi" secondAttribute="leading" id="tq6-UQ-po6"/>
