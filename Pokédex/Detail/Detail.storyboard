@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Dyr-ZY-417">
-    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,20 +12,40 @@
             <objects>
                 <viewController id="Dyr-ZY-417" userLabel="Pokémon" customClass="DetailViewController" customModule="Pokédex" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ftx-yW-5Mx">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rbj-mx-teb" userLabel="Pokémon Image">
-                                <rect key="frame" x="0.0" y="88" width="414" height="387"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="311.5"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a9m-Nu-6RT" userLabel="Spacer View 1">
+                                <rect key="frame" x="187.5" y="355.5" width="0.0" height="67"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" id="Vbx-ou-Qfr"/>
+                                </constraints>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Height" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oyp-I5-EeB" userLabel="Height Label">
-                                <rect key="frame" x="0.0" y="525" width="414" height="26.333333333333371"/>
+                                <rect key="frame" x="0.0" y="422.5" width="375" height="26.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Types" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="okC-Sm-f35" userLabel="Types Label">
+                                <rect key="frame" x="0.0" y="474" width="375" height="26.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pkJ-VZ-XCm" userLabel="Spacer View 2">
+                                <rect key="frame" x="187.5" y="500.5" width="0.0" height="66.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" id="5ji-E3-F6X"/>
+                                </constraints>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J0c-PW-MO6" userLabel="Play Button" customClass="RoundButton" customModule="ObjectLibrary">
-                                <rect key="frame" x="50" y="762" width="314" height="50"/>
+                                <rect key="frame" x="50" y="567" width="275" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="t3X-Wu-sLe"/>
@@ -41,28 +61,28 @@
                                     <action selector="playButtonTapped:" destination="Dyr-ZY-417" eventType="touchUpInside" id="mtA-hh-4lj"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Types" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="okC-Sm-f35" userLabel="Types Label">
-                                <rect key="frame" x="0.0" y="576.33333333333337" width="414" height="26.333333333333371"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="J0c-PW-MO6" firstAttribute="top" secondItem="pkJ-VZ-XCm" secondAttribute="bottom" id="3OU-Kp-PgW"/>
                             <constraint firstItem="Rbj-mx-teb" firstAttribute="top" secondItem="Ecy-1Q-lDQ" secondAttribute="top" id="7Qs-kP-37w"/>
                             <constraint firstItem="Oyp-I5-EeB" firstAttribute="leading" secondItem="Ecy-1Q-lDQ" secondAttribute="leading" id="ELx-vd-H50"/>
                             <constraint firstItem="Rbj-mx-teb" firstAttribute="leading" secondItem="Ecy-1Q-lDQ" secondAttribute="leading" id="JuZ-pl-clu"/>
+                            <constraint firstItem="pkJ-VZ-XCm" firstAttribute="top" secondItem="okC-Sm-f35" secondAttribute="bottom" id="Lzm-dY-qYr"/>
                             <constraint firstItem="Ecy-1Q-lDQ" firstAttribute="trailing" secondItem="okC-Sm-f35" secondAttribute="trailing" id="QZ3-c5-BRq"/>
                             <constraint firstItem="okC-Sm-f35" firstAttribute="leading" secondItem="Ecy-1Q-lDQ" secondAttribute="leading" id="R0I-di-JqL"/>
                             <constraint firstItem="Ecy-1Q-lDQ" firstAttribute="bottom" secondItem="J0c-PW-MO6" secondAttribute="bottom" constant="50" id="Tqn-dg-i7F"/>
+                            <constraint firstItem="a9m-Nu-6RT" firstAttribute="centerX" secondItem="Ecy-1Q-lDQ" secondAttribute="centerX" id="Ugf-Ac-edd"/>
+                            <constraint firstItem="pkJ-VZ-XCm" firstAttribute="centerX" secondItem="Ecy-1Q-lDQ" secondAttribute="centerX" id="Z7Y-yz-9Uf"/>
+                            <constraint firstItem="pkJ-VZ-XCm" firstAttribute="height" secondItem="a9m-Nu-6RT" secondAttribute="height" id="hhm-Ur-Z6g"/>
                             <constraint firstItem="Ecy-1Q-lDQ" firstAttribute="trailing" secondItem="J0c-PW-MO6" secondAttribute="trailing" constant="50" id="lue-IV-Bxc"/>
                             <constraint firstItem="Ecy-1Q-lDQ" firstAttribute="trailing" secondItem="Rbj-mx-teb" secondAttribute="trailing" id="m3x-Ay-PdZ"/>
                             <constraint firstItem="J0c-PW-MO6" firstAttribute="leading" secondItem="Ecy-1Q-lDQ" secondAttribute="leading" constant="50" id="nWw-UU-QuZ"/>
                             <constraint firstItem="Ecy-1Q-lDQ" firstAttribute="centerY" secondItem="Rbj-mx-teb" secondAttribute="bottom" id="nmr-jR-3Ym"/>
+                            <constraint firstItem="a9m-Nu-6RT" firstAttribute="bottom" secondItem="Oyp-I5-EeB" secondAttribute="top" id="obJ-cC-hhx"/>
                             <constraint firstItem="okC-Sm-f35" firstAttribute="top" secondItem="Oyp-I5-EeB" secondAttribute="bottom" constant="25" id="scC-6Y-n10"/>
-                            <constraint firstItem="Oyp-I5-EeB" firstAttribute="top" secondItem="Rbj-mx-teb" secondAttribute="bottom" constant="50" id="uhl-ac-zJ5"/>
                             <constraint firstItem="Ecy-1Q-lDQ" firstAttribute="trailing" secondItem="Oyp-I5-EeB" secondAttribute="trailing" id="vgJ-s5-For"/>
+                            <constraint firstItem="a9m-Nu-6RT" firstAttribute="top" secondItem="Rbj-mx-teb" secondAttribute="bottom" id="yAM-ZN-qYU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ecy-1Q-lDQ"/>
                     </view>
@@ -76,7 +96,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vNB-oL-KUg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="126" y="123"/>
+            <point key="canvasLocation" x="124.6376811594203" y="122.54464285714285"/>
         </scene>
     </scenes>
     <resources>

@@ -17,8 +17,7 @@ final class PokémonPersistence: FileStoragePersistence {
     }
     
     func pokémon(named name: String) -> Pokémon? {
-        let url = directoryURL.appendingPathComponent(name).appendingPathExtension(fileType)
-        return read(url: url)
+        return read(url: directoryURL.appendingPathComponent(name).appendingPathExtension(fileType))
     }
     
 }

@@ -55,7 +55,7 @@ final class ListModel {
                 switch result {
                 case .success(let pokémon):
                     self.pokémonPersistence.save(pokémon)
-                    self.delegate?.didDownload(error: nil, reloadData: true)
+                    self.delegate?.didDownload(error: nil, reloadData: false)
                     self.delegate?.show(pokémon)
                 case .failure(let error):
                     self.delegate?.didDownload(error: error, reloadData: false)

@@ -19,8 +19,7 @@ final class ListViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let detailViewController = segue.destination as? DetailViewController else { return }
-        let pokémon = sender as? Pokémon
-        detailViewController.pokémon = pokémon
+        detailViewController.pokémon = sender as? Pokémon
     }
     
 }
@@ -67,13 +66,15 @@ extension ListViewController: ListModelDelegate {
         DispatchQueue.main.async { [weak self] in
             guard let strongSelf = self else { return }
             
-            strongSelf.activityIndicator.stopAnimating()
+            if reloadData {
+                strongSelf.tableView.reloadData()
+            }
             
             if error != nil {
                 strongSelf.presentSingleActionAlert(alerTitle: "Error", message: error?.message ?? "", actionTitle: "OK", completion: {})
-            } else if reloadData {
-                strongSelf.tableView.reloadData()
             }
+            
+            strongSelf.activityIndicator.stopAnimating()
         }
     }
     
@@ -118,6 +119,7 @@ extension ListViewController: UITableViewDataSource {
         //swiftlint:disable:next force_cast
         let cell = tableView.dequeueReusableCell(withIdentifier: "pokémon") as! ListTableViewCell
         cell.setup(entry: model.pokémon(for: indexPath, isFiltering: isFiltering))
+        
         return cell
     }
     
